@@ -6,7 +6,6 @@ OverlayEntry? _loaderEntry;
 
 bool isDarkTheme = false;
 bool loaderShown = false;
-var spinKit;
 
 class Loading extends StatelessWidget {
   final Widget? child;

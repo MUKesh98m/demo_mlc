@@ -1,6 +1,6 @@
 import 'package:demo/common/app_string.dart';
 import 'package:demo/common/constants.dart';
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../controllers/home_screen_controllerr.dart';
@@ -19,7 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     Provider.of<HomeScreenController>(context, listen: false).categoryList();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => CompilerScreen(),
+                        builder: (context) => const CompilerScreen(),
                       ));
                 },
                 child: Card(
@@ -56,8 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         flex: 2,
                         child: Center(
                           child: Image.network(
-                            "${AppStrings.imageUrl}${homeScreenController.getCourses?.course![index].image}" ??
-                                "assets/images/pngwing.com",
+                            "${AppStrings.imageUrl}${homeScreenController.getCourses?.course![index].image}",
                             height: 80,
                             width: 80,
                           ), /* child: Image.asset(

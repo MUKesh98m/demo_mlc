@@ -3,7 +3,6 @@ import 'package:demo/common/app_string.dart';
 import 'package:demo/common/constants.dart';
 import 'package:demo/components/authentication_button.dart';
 import 'package:demo/components/bottom_navbar.dart';
-import 'package:demo/screens/home_screen.dart';
 import 'package:demo/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -175,7 +174,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              BottomNavBar(),
+                                              const BottomNavBar(),
                                         ));
                                   }
                                 },

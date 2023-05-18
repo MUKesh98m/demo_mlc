@@ -7,16 +7,16 @@ import 'package:flutter/material.dart';
 import '../screens/compiler/complier_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
-  BottomNavBar({Key? key}) : super(key: key);
+  const BottomNavBar({Key? key}) : super(key: key);
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  final GlobalKey _NavKey = GlobalKey();
+  final navKey = GlobalKey();
 
-  var PagesAll = [const HomeScreen(), CompilerScreen(), const ProfileScreen()];
+  var pagesAll = [const HomeScreen(), const CompilerScreen(), const ProfileScreen()];
 
   var myIndex = 0;
 
@@ -24,10 +24,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: homeScreenBackgroundColor,
-      body: PagesAll[myIndex],
+      body: pagesAll[myIndex],
       bottomNavigationBar: CurvedNavigationBar(
         color: bottomBarColor,
-        key: _NavKey,
+        key: navKey,
         backgroundColor: Colors.transparent,
         items: <Widget>[
           Icon(myIndex == 0 ? Icons.favorite : Icons.favorite_border,

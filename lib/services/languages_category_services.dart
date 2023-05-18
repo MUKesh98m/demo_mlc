@@ -3,7 +3,6 @@
 import 'package:demo/model/course_list_model.dart';
 import 'package:dio/dio.dart';
 
-import '../common/app_string.dart';
 import '../components/indicators.dart';
 
 class LanguageCategoryService {
@@ -15,12 +14,10 @@ class LanguageCategoryService {
       final Response response = await _dio.get(
           'https://mlcompiler.000webhostapp.com/compile/getcourses.php',
            );
-      print('categorylist ----->  ${response.data}');
       hideLoadingIndicator();
       return GetCourses.fromJson(response.data);
     } catch (e) {
-      print('${e}');
+      return null;
     }
-    return null;
   }
 }

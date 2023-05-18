@@ -127,8 +127,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   ));
                               AppPreference.set(
                                   AppStrings.onBoardingStart, true);
-                              print(AppPreference.getBool(
-                                  AppStrings.onBoardingStart));
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,

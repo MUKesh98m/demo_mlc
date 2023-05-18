@@ -1,15 +1,14 @@
-import 'package:demo/common/constants.dart';
 import 'package:flutter/material.dart';
 
 class CompilerScreen extends StatefulWidget {
-  CompilerScreen({Key? key}) : super(key: key);
+  const CompilerScreen({Key? key}) : super(key: key);
 
   @override
   State<CompilerScreen> createState() => _CompilerScreenState();
 }
 
 class _CompilerScreenState extends State<CompilerScreen> {
-  String Code = '''
+  String code = '''
 #include<stdio.h>
 int main() {
     int intType;
@@ -43,6 +42,7 @@ int main() {
     });
   }
 
+  @override
   void dispose() {
     textEditingController.removeListener(_updateLineNumbers);
     textEditingController.dispose();
@@ -154,7 +154,6 @@ int main() {
                         setState(() {
                           symbolController.text = symbol;
                         });
-                        print(symbolController.text);
                         sumController;
                       },
                       child: Padding(
@@ -166,7 +165,7 @@ int main() {
                           child: Center(
                             child: Text(
                               symbol,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,

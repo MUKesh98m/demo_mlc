@@ -5,6 +5,6 @@ class CommonDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(child: Text("MLC"),);
+    return const Drawer(child: Text("MLC"),);
   }
 }
