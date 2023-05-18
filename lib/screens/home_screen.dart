@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return SafeArea(
         child: Scaffold(
           appBar: AppBar(
-              leading: null,
+              automaticallyImplyLeading: false,
               backgroundColor: bottomBarColor,
               title: const Text("Multi Language Code Compiler")),
           backgroundColor: homeScreenBackgroundColor,

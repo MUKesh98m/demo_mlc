@@ -1,3 +1,5 @@
+import 'package:demo/screens/compiler/compiler_controller.dart';
+import 'package:demo/services/db_helper.dart';
 import 'package:demo/services/languages_category_services.dart';
 import 'package:demo/utils/app_prefernce.dart';
 import 'package:demo/common/app_string.dart';
@@ -12,15 +14,19 @@ import 'components/bottom_navbar.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp, // Disables landscape orientations
-  ]);
+    DeviceOrientation.portraitUp,
 
+  ]);
+  DatabaseHelper.database();
   LanguageCategoryService().categoryList();
   AppPreference.init();
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider.value(
         value: HomeScreenController(),
+      ),
+      ChangeNotifierProvider.value(
+        value: CompilerController(),
       ),
     ],
     child: const MyApp(),
