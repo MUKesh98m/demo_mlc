@@ -1,9 +1,9 @@
-
 import 'package:demo/common/app_string.dart';
 import 'package:demo/common/constants.dart';
 import 'package:demo/components/authentication_button.dart';
 import 'package:demo/components/bottom_navbar.dart';
 import 'package:demo/screens/signup_screen.dart';
+import 'package:demo/utils/app_prefernce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:toasty_snackbar/toasty_snackbar.dart';
@@ -82,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 color: kGreyColor,
                                 fontSize: 15.0,
                               ),
-                            )
+                            ),
                           ],
                         ),
 
@@ -93,9 +93,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               hintText: AppStrings.email,
                               icon: Icons.person,
                               keyboardType: TextInputType.name,
-                              onChanged: (value) {},
                               controller: usernameController,
                               validator: validateEmail,
+                              onChanged: (String) {},
                             ),
                             CustomTextField(
                               hintText: AppStrings.password,
@@ -118,7 +118,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                       Checkbox(
                                         checkColor: Colors.white,
                                         fillColor: MaterialStateProperty.all(
-                                            kDarkGreenColor),
+                                          kDarkGreenColor,
+                                        ),
                                         value: rememberMe,
                                         onChanged: (value) {
                                           setState(() {
@@ -132,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           color: kGreyColor,
                                           fontSize: 14.0,
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                   TextButton(
@@ -140,12 +141,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                     style: ButtonStyle(
                                       foregroundColor:
                                           MaterialStateProperty.all(
-                                              kDarkGreenColor),
+                                        kDarkGreenColor,
+                                      ),
                                     ),
                                     child: const Text(
                                       AppStrings.forgotPassword,
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
@@ -166,16 +168,25 @@ class _LoginScreenState extends State<LoginScreen> {
                                 label: 'Log In',
                                 onPressed: () {
                                   if (_formKey.currentState!.validate()) {
+                                    AppPreference.set(
+                                      AppStrings.email,
+                                      true,
+                                    );
+                                    print(AppPreference.getBool(
+                                      AppStrings.email,
+                                    ));
                                     context.showToastySnackbar(
-                                        "Login Succesfully",
-                                        "User Login Is Succesfully Complited",
-                                        AlertType.success);
+                                      "Login Succesfully",
+                                      "User Login Is Succesfully Complited",
+                                      AlertType.success,
+                                    );
                                     Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              const BottomNavBar(),
-                                        ));
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const BottomNavBar(),
+                                      ),
+                                    );
                                   }
                                 },
                               ),
@@ -192,24 +203,26 @@ class _LoginScreenState extends State<LoginScreen> {
                                       style: ButtonStyle(
                                         foregroundColor:
                                             MaterialStateProperty.all(
-                                                kDarkGreenColor),
+                                          kDarkGreenColor,
+                                        ),
                                       ),
                                       onPressed: () {
                                         Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  SignupScreen(),
-                                            ));
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                SignupScreen(),
+                                          ),
+                                        );
                                       },
                                       child: const Text(
                                         'Sign up',
                                         style: TextStyle(fontSize: 14.0),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),

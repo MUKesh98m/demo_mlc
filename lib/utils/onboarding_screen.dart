@@ -94,7 +94,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             fontSize: (width <= 550) ? 17 : 25,
                           ),
                           textAlign: TextAlign.center,
-                        )
+                        ),
                       ],
                     ),
                   );
@@ -124,9 +124,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => const LoginScreen(),
-                                  ));
+                                  ),);
                               AppPreference.set(
-                                  AppStrings.onBoardingStart, true);
+                                  AppStrings.onBoardingStart, true,);
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,
@@ -135,9 +135,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               ),
                               padding: (width <= 550)
                                   ? const EdgeInsets.symmetric(
-                                      horizontal: 100, vertical: 20)
+                                      horizontal: 100, vertical: 20,)
                                   : EdgeInsets.symmetric(
-                                      horizontal: width * 0.2, vertical: 25),
+                                      horizontal: width * 0.2, vertical: 25,),
                               textStyle:
                                   TextStyle(fontSize: (width <= 550) ? 13 : 17),
                             ),
@@ -180,17 +180,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   elevation: 0,
                                   padding: (width <= 550)
                                       ? const EdgeInsets.symmetric(
-                                          horizontal: 30, vertical: 20)
+                                          horizontal: 30, vertical: 20,)
                                       : const EdgeInsets.symmetric(
-                                          horizontal: 30, vertical: 25),
+                                          horizontal: 30, vertical: 25,),
                                   textStyle: TextStyle(
-                                      fontSize: (width <= 550) ? 13 : 17),
+                                      fontSize: (width <= 550) ? 13 : 17,),
                                 ),
                                 child: const Text("NEXT"),
                               ),
                             ],
                           ),
-                        )
+                        ),
                 ],
               ),
             ),

@@ -1,5 +1,3 @@
-
-
 import 'package:demo/model/course_list_model.dart';
 import 'package:dio/dio.dart';
 
@@ -10,14 +8,19 @@ class LanguageCategoryService {
 
   Future<GetCourses?> categoryList() async {
     try {
+      showLoadingIndicator();
 
       final Response response = await _dio.get(
-          'https://mlcompiler.000webhostapp.com/compile/getcourses.php',
-           );
+        'https://mlcompiler.000webhostapp.com/compile/getcourses.php',
+      );
       hideLoadingIndicator();
-      return GetCourses.fromJson(response.data);
+      print(response.data);
+      GetCourses.fromJson(response.data);
+
     } catch (e) {
-      return null;
+      print('${e}');
     }
+
+    return null;
   }
 }

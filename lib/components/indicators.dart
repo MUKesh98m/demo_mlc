@@ -47,9 +47,9 @@ OverlayState? get _overlayState {
 }
 
 Future<void> showLoadingIndicator(
-    {bool isModal = true, Color? modalColor}) async {
+    {bool isModal = true, Color? modalColor,}) async {
   try {
-    if (loaderShown == true) {
+    if (loaderShown) {
       return;
     }
     debugPrint('Showing loading overlay');
@@ -60,8 +60,7 @@ Future<void> showLoadingIndicator(
     await _showOverlay(
       child: isModal
           ? GestureDetector(
-        onTap: () {},
-        child: SizedBox(
+         child: SizedBox(
           height: double.maxFinite,
           width: double.maxFinite,
           child: Stack(
@@ -69,7 +68,7 @@ Future<void> showLoadingIndicator(
               ModalBarrier(
                 color: modalColor,
               ),
-              child
+              child,
             ],
           ),
         ),
@@ -84,7 +83,7 @@ Future<void> showLoadingIndicator(
 
 Future<void> hideLoadingIndicator() async {
   try {
-    if (loaderShown == false) {
+    if (!loaderShown) {
       return;
     }
     debugPrint('Hiding loading overlay');

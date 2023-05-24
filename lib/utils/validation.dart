@@ -8,7 +8,7 @@ String? validateEmail(value) {
   } else if (value.length == 1) {
     return null;
   }
-  return null;
+    null;
 }
 
 String? nameValidation(value) {

@@ -56,14 +56,14 @@ class _CompilerScreenState extends State<CompilerScreen> {
                     color: Colors.grey[900],
                     child: ListView.builder(
                       itemCount: Provider.of<CompilerController>(context,
-                              listen: false)
+                              listen: false,)
                           .lines
                           .length,
                       itemBuilder: (context, index) {
                         return Container(
                           alignment: Alignment.centerRight,
                           padding: const EdgeInsets.symmetric(
-                              vertical: 4, horizontal: 8),
+                              vertical: 4, horizontal: 8,),
                           child: Text(
                             '${index + 1}',
                             style: const TextStyle(
@@ -79,7 +79,7 @@ class _CompilerScreenState extends State<CompilerScreen> {
                       padding: const EdgeInsets.all(8),
                       child: TextField(
                         controller: Provider.of<CompilerController>(context,
-                                listen: false)
+                                listen: false,)
                             .textEditingController,
                         style: const TextStyle(color: Colors.white),
                         maxLines: null,
@@ -169,6 +169,6 @@ class _CompilerScreenState extends State<CompilerScreen> {
           ),*/
         ),
       );
-    });
+    },);
   }
 }

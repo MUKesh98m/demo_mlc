@@ -93,9 +93,8 @@ class SignupScreen extends StatelessWidget {
                           hintText:AppStrings.password,
                           icon: Icons.lock,
                           keyboardType: TextInputType.name,
-                          onChanged: (value) {},
-                          controller: passController,
-                          validator: validatePassword,
+                           controller: passController,
+                          validator: validatePassword, onChanged: (String ) {  },
                         ),
                         CustomTextField(
                           hintText: AppStrings.confirmPassword,
@@ -165,11 +164,11 @@ class SignupScreen extends StatelessWidget {
                             context.showToastySnackbar(
                                 "Login Succesfully",
                                 "User Login Is Succesfully Complited",
-                                AlertType.success);
+                                AlertType.success,);
                           }
                         },
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

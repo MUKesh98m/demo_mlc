@@ -31,7 +31,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         backgroundColor: Colors.transparent,
         items: <Widget>[
           Icon(myIndex == 0 ? Icons.favorite : Icons.favorite_border,
-              size: 30, color: Colors.white),
+              size: 30, color: Colors.white,),
           const Icon(Icons.home_outlined, size: 30, color: Colors.white),
           const Icon(Icons.person_2, size: 30, color: Colors.white),
         ],

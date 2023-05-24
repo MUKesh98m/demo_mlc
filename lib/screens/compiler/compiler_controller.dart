@@ -45,7 +45,7 @@ class CompilerController extends ChangeNotifier {
     "#",
     "\$",
     "&",
-    "_"
+    "_",
   ];
   String code = '''
 #include<stdio.h>

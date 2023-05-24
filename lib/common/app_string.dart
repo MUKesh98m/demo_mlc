@@ -20,4 +20,5 @@ class AppStrings {
   static const String rememberMe = 'Remember Me';
   static const String forgotPassword = 'Forgot Password ?';
   static const String logIn = 'Log In';
+  static const String emailValue = 'EmailValue';
 }
